@@ -233,27 +233,27 @@
           Hold each for three seconds until the ring turns green. <br />Complete
           all within 13 seconds.
         </div>
+        <div id="failText" class="outcomeText hide">Too slow</div>
+        <div id="successText" class="outcomeText hide">Well done</div>
         <button id="startBtn" class="gameBtn">Start Game</button>
-        <button id="backBtn" class="gameBtn">Go back</button>
-        <button id="enterRoom" class="gameBtn">Open door</button>
-        <div id="failText" class="outcomeText">Too slow</div>
-        <div id="successText" class="outcomeText">Well done</div>
+        <button id="backBtn" class="gameBtn hide">Go back</button>
+        <button id="enterRoom" class="gameBtn hide">Open door</button>
       </div>
     </div>
     <div id="countDownNumber" class="hide">13</div>
-    <div class="lockBodyBg">
+    <div id="lockBodyBg" class="hide">
       <div id="lockContainer">
         <div id="lockPickArm">
           <span id="dot"></span>
         </div>
         <div id="outerCircle"></div>
         <div id="innerCircle"></div>
-        <div id="pinContainer">
-          <span data-deg="80" class="pin current"></span>
-          <span data-deg="250" class="pin"></span>
-          <span data-deg="0" class="pin"></span>
-          <span id="lose" class="win"></span>
-        </div>
+      </div>
+      <div id="pinContainer">
+        <span data-deg="80" class="pin current"></span>
+        <span data-deg="250" class="pin"></span>
+        <span data-deg="0" class="pin"></span>
+        <span id="lose" class="win"></span>
       </div>
     </div>
     <div id="ipodContainer" class="hide ipodContainerTable">

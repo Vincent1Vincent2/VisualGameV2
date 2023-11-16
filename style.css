@@ -529,3 +529,472 @@
   z-index: 2;
   border: none;
 }
+
+#lockPickGameContainer {
+  height: 100svh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.079);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.blueRoom {
+  background-color: #aec6cf;
+}
+.redRoom {
+  background-color: #fe6161;
+}
+.greenRoom {
+  background-color: #77dd77;
+}
+
+#gameInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 450px;
+  background-color: rgba(255, 255, 255, 0.226);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.496);
+  z-index: 1;
+}
+
+#gameDescription {
+  font-size: 2.1rem;
+  width: 650px;
+  color: #3e3e3e;
+}
+
+.gameBtn {
+  padding: 1.2rem 5rem;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.303);
+  color: #3e3e3e;
+  border: solid 1.5px #3e3e3e39;
+  border-radius: 7px;
+}
+
+.gameBtn:hover {
+  background-color: rgba(255, 255, 255, 0.556);
+  border: solid 1.5px #3e3e3e5f;
+}
+
+.outcomeText {
+  font-size: 8rem;
+  display: none;
+}
+
+#countDownNumber {
+  position: absolute;
+  left: 64%;
+  top: 20%;
+  font-size: 8rem;
+  color: white;
+}
+
+#lockBodyBg {
+  height: 100svh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+#lockContainer {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+}
+
+#lockPickArm {
+  position: absolute;
+  left: 48.3%;
+  top: 5.8%;
+  width: 15px;
+  height: 200px;
+  border-radius: 50px;
+  background-color: rgb(245, 245, 245);
+  transform-origin: bottom;
+  z-index: 1;
+}
+
+#outerCircle {
+  width: 100%;
+  height: 100%;
+  border: 20px solid rgba(255, 255, 255, 0.476);
+  outline: rgba(255, 255, 255, 0.612) solid;
+  border-radius: 100%;
+}
+
+.shakeCircle:hover {
+  animation: shake 3s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  1%,
+  2% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+  3%,
+  4% {
+    transform: translate(4px, 1px) rotate(0.5deg);
+  }
+  5%,
+  6% {
+    transform: translate(6px, 2px) rotate(0.5deg);
+  }
+  7%,
+  8% {
+    transform: translate(2px, 6px) rotate(0.5deg);
+  }
+  9%,
+  10% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  11%,
+  12% {
+    transform: translate(5px, 5px) rotate(0.5deg);
+  }
+  13%,
+  14% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  15%,
+  16% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+  17%,
+  18% {
+    transform: translate(4px, 1px) rotate(0.5deg);
+  }
+  19%,
+  20% {
+    transform: translate(6px, 2px) rotate(0.5deg);
+  }
+  21%,
+  22% {
+    transform: translate(2px, 6px) rotate(0.5deg);
+  }
+  23%,
+  24% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  25%,
+  26% {
+    transform: translate(5px, 5px) rotate(0.5deg);
+  }
+  27%,
+  28% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  29%,
+  30% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+  31%,
+  32% {
+    transform: translate(4px, 1px) rotate(0.5deg);
+  }
+  33%,
+  34% {
+    transform: translate(6px, 2px) rotate(0.5deg);
+  }
+  35%,
+  36% {
+    transform: translate(2px, 6px) rotate(0.5deg);
+  }
+  37%,
+  38% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  39%,
+  40% {
+    transform: translate(5px, 5px) rotate(0.5deg);
+  }
+  41%,
+  42% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  43%,
+  44% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+  45%,
+  46% {
+    transform: translate(4px, 1px) rotate(0.5deg);
+  }
+  47%,
+  48% {
+    transform: translate(6px, 2px) rotate(0.5deg);
+  }
+  49%,
+  50% {
+    transform: translate(2px, 6px) rotate(0.5deg);
+  }
+  51%,
+  52% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  53%,
+  54% {
+    transform: translate(5px, 5px) rotate(0.5deg);
+  }
+  55%,
+  56% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  57%,
+  58% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+  59%,
+  60% {
+    transform: translate(4px, 1px) rotate(0.5deg);
+  }
+  61%,
+  62% {
+    transform: translate(6px, 2px) rotate(0.5deg);
+  }
+  63%,
+  64% {
+    transform: translate(2px, 6px) rotate(0.5deg);
+  }
+  65%,
+  66% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  67%,
+  68% {
+    transform: translate(5px, 5px) rotate(0.5deg);
+  }
+  69%,
+  70% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  71%,
+  72% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+  73%,
+  74% {
+    transform: translate(4px, 1px) rotate(0.5deg);
+  }
+  75%,
+  76% {
+    transform: translate(6px, 2px) rotate(0.5deg);
+  }
+  77%,
+  78% {
+    transform: translate(2px, 6px) rotate(0.5deg);
+  }
+  79%,
+  80% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  81%,
+  82% {
+    transform: translate(5px, 5px) rotate(0.5deg);
+  }
+  83%,
+  84% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  85%,
+  86% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+  87%,
+  88% {
+    transform: translate(4px, 1px) rotate(0.5deg);
+  }
+  89%,
+  90% {
+    transform: translate(6px, 2px) rotate(0.5deg);
+  }
+  91%,
+  92% {
+    transform: translate(2px, 6px) rotate(0.5deg);
+  }
+  93%,
+  94% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  95%,
+  96% {
+    transform: translate(5px, 5px) rotate(0.5deg);
+  }
+  97%,
+  98% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  99% {
+    transform: translate(1px, 4px) rotate(0.5deg);
+  }
+}
+
+.success {
+  animation: success 0.2s linear;
+}
+
+@keyframes success {
+  0% {
+    border: 20px solid #77dd77;
+    outline: #77dd77;
+  }
+
+  100% {
+    border: 20px solid white;
+    outline: white;
+  }
+}
+
+#dot {
+  position: absolute;
+  top: -14%;
+  left: -50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.509);
+  pointer-events: none;
+  animation: expandMark 3s, shake 3s ease-in-out;
+}
+
+@keyframes expandMark {
+  0%,
+  15%,
+  30%,
+  45%,
+  60%,
+  75%,
+  90% {
+    background-color: #77dd77;
+  }
+  5%,
+  20%,
+  35%,
+  50%,
+  65%,
+  80%,
+  95% {
+    background-color: rgba(236, 237, 234, 0.75);
+  }
+
+  10%,
+  25%,
+  40%,
+  55%,
+  70%,
+  85%,
+  100% {
+    background-color: #77dd77;
+  }
+}
+
+#innerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border: solid 3px rgba(255, 255, 255, 0.382);
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.203);
+}
+
+#pinContainer {
+  justify-content: center;
+  gap: 1.5rem;
+  display: flex;
+  position: absolute;
+  top: 70%;
+}
+
+.pin {
+  width: 20px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.65);
+  margin-top: 4rem;
+}
+
+.pin.current {
+  margin-top: 3rem;
+  background-color: white;
+  animation: pinDown 0.5s reverse;
+}
+
+.pin.done {
+  background-color: #77dd77;
+  animation: pinDone 0.5s, pinDown 0.5s;
+}
+
+@keyframes pinDone {
+  0% {
+    background-color: rgba(255, 255, 255);
+  }
+  25% {
+    background-color: rgb(178, 206, 178);
+  }
+  50% {
+    background-color: #a6d3a6;
+  }
+  75% {
+    background-color: #98d698;
+  }
+  100% {
+    background-color: #77dd77;
+  }
+}
+
+.pin.down {
+  animation: pinDown 0.5s ease;
+}
+
+@keyframes pinDown {
+  0% {
+    margin-top: 3rem;
+  }
+  10% {
+    margin-top: 3.2rem;
+  }
+  20% {
+    margin-top: 3.4rem;
+  }
+  30% {
+    margin-top: 3.6rem;
+  }
+  40% {
+    margin-top: 3.8rem;
+  }
+  50% {
+    margin-top: 4rem;
+  }
+  60% {
+    margin-top: 4.2rem;
+  }
+  70% {
+    margin-top: 4.4rem;
+  }
+  80% {
+    margin-top: 4.6rem;
+  }
+  90% {
+    margin-top: 4.8rem;
+  }
+  100% {
+    margin-top: 5rem;
+  }
+}
