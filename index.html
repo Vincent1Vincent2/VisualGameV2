@@ -9,82 +9,182 @@
   <body>
     <main id="gameBox">
       <div id="displayText"></div>
-      <div id="startRoomBg"></div>
-      <div id="otherRoomBg"></div>
+      <div id="startRoomBg" class="hide"></div>
+      <div id="otherRoomBg" class="hide"></div>
       <img
         id="brownRoomBack"
-        class="arrowScale"
+        class="arrowScale hide"
         src="/imgs/backArrows/brownRoomBack.png"
       />
       <img
         id="brownRoomBackBookshelfDesk"
-        class="arrowScale"
+        class="arrowScale hide"
         src="/imgs/backArrows/brownRoomBackBookshelfDesk.png"
       />
       <img
         id="brownRoomBackPiano"
-        class="arrowScale"
+        class="arrowScale hide"
         src="/imgs/backArrows/brownRoomBackPiano.png"
       />
       <img
         id="blueRoomBack"
-        class="arrowScale"
+        class="arrowScale hide"
         src="/imgs/backArrows/blueRoomBack.png"
       />
       <img
         id="redRoomBack"
-        class="arrowScale"
+        class="arrowScale hide"
         src="/imgs/backArrows/redRoomBack.png"
       />
 
       <div id="inventory">
-        <div id="inventoryText">INVENTORY</div>
-        <img id="blueKey" src="/imgs/items/blueKey.png" alt="" />
-        <img id="useBlueKey" src="/imgs/items/useBlueKey.png" alt="" />
-        <img id="redKey" src="/imgs/items/redKey.png" alt="" />
-        <img id="useRedKey" src="/imgs/items/useRedKey.png" alt="" />
-        <img id="greenKey" src="/imgs/items/greenKey.png" alt="" />
-        <img id="useGreenKey" src="/imgs/items/useGreenKey.png" alt="" />
-        <img id="lockPick" src="/imgs/items/lockPickKit.png" alt="" />
-        <img id="useLockPick" src="/imgs/items/useLockPickKit.png" alt="" />
-        <img id="noteSheet" src="/imgs/items/noteSheet.png" alt="" />
-        <img id="useNoteSheet" src="/imgs/items/useNoteSheet.png" alt="" />
+        <div id="inventoryText" class="hide">INVENTORY</div>
+        <img id="blueKey" class="hide" src="/imgs/items/blueKey.png" />
+        <img id="useBlueKey" class="hide" src="/imgs/items/useBlueKey.png" />
+        <img id="redKey" class="hide" src="/imgs/items/redKey.png" />
+        <img id="useRedKey" class="hide" src="/imgs/items/useRedKey.png" />
+        <img id="greenKey" class="hide" src="/imgs/items/greenKey.png" />
+        <img id="useGreenKey" class="hide" src="/imgs/items/useGreenKey.png" />
+        <img id="lockPick" class="hide" src="/imgs/items/lockPickKit.png" />
+        <img
+          id="useLockPick"
+          class="hide"
+          src="/imgs/items/useLockPickKit.png"
+        />
+        <img id="noteSheet" class="hide" src="/imgs/items/noteSheet.png" />
+        <img
+          id="useNoteSheet"
+          class="hide"
+          src="/imgs/items/useNoteSheet.png"
+        />
       </div>
 
-      <button id="useLockPickBlue" class="lockPickBtn"></button>
-      <button id="useLockPickRed" class="lockPickBtn"></button>
-      <button id="useLockPickGreen" class="lockPickBtn"></button>
+      <button id="useLockPickBlue" class="hide" class="lockPickBtn"></button>
+      <button id="useLockPickRed" class="hide" class="lockPickBtn"></button>
+      <button id="useLockPickGreen" class="hide" class="lockPickBtn"></button>
 
-      <div id="lockedTitle">This door is locked</div>
-      <div id="usedDoorTitle">You've already been here</div>
-      <img id="blueDoorOpen" src="/imgs/doors/blueOpen.png" alt="" />
-      <img id="blueDoor" src="/imgs/doors/blueDoor.png" alt="" />
-      <img id="openBlueDoor" src="/imgs/doors/openBlueDoor.png" alt="" />
-      <img id="redDoorOpen" src="/imgs/doors/redDoorOpen.png" alt="" />
-      <img id="redDoor" src="/imgs/doors/redDoor.png" alt="" />
-      <img id="openRedDoor" src="/imgs/doors/openRedDoor.png" alt="" />
-      <img id="brownDoorOpen" src="/imgs/doors/brownDoorOpen.png" alt="" />
-      <img id="brownDoor" src="/imgs/doors/brownDoor.png" alt="" />
-      <img id="brownDoorOnlyPiano" src="/imgs/doors/brownDoorOnlyPiano.png" />
-      <img id="greenDoorOpen" src="/imgs/doors/greenDoorOpen.png" alt="" />
-      <img id="greenDoor" src="/imgs/doors/greenDoor.png" alt="" />
-      <img id="openGreenDoor" src="/imgs/doors/openGreenDoor.png" alt="" />
-      <img id="usedBlueDoor" src="/imgs/doors/usedBlueDoor.png" alt="" />
-      <img id="usedRedDoor" src="/imgs/doors/usedRedDoor.png" alt="" />
-      <img id="usedBrownDoor" src="/imgs/doors/usedBrownDoor.png" alt="" />
-      <img id="usedGreenDoor" src="imgs/doors/usedGreenDoor.png" alt="" />
-      <img id="bookshelf" src="/imgs/furniture/bookshelf.png" alt="bookshelf" />
-      <img id="exploreBookshelf" src="/imgs/furniture/exploreBookshelf.png" />
-      <img id="usedBookshelf" src="/imgs/furniture/usedBookshelf.png" />
-      <img id="desk" src="/imgs/furniture/desk.png" alt="desk" />
-      <img id="deskOpen" src="/imgs/furniture/deskOpen.png" alt="desk" />
-      <img id="usedDesk" src="/imgs/furniture/usedDesk.png" alt="desk" />
-      <img id="piano" src="/imgs/furniture/piano.png" />
-      <img id="playPiano" src="/imgs/furniture/playPiano.png" alt="" />
-      <img id="bed" src="/imgs/furniture/bed.png" />
-      <img id="bedSideTable" src="/imgs/furniture/bedSideTable.png" alt="" />
+      <div id="lockedTitle" class="hide">This door is locked</div>
+      <div id="usedDoorTitle" class="hide">You've already been here</div>
+      <img
+        id="blueDoorOpen"
+        class="hide"
+        src="/imgs/doors/blueOpen.png"
+        alt=""
+      />
+      <img id="blueDoor" class="hide" src="/imgs/doors/blueDoor.png" alt="" />
+      <img
+        id="openBlueDoor"
+        class="hide"
+        src="/imgs/doors/openBlueDoor.png"
+        alt=""
+      />
+      <img
+        id="redDoorOpen"
+        class="hide"
+        src="/imgs/doors/redDoorOpen.png"
+        alt=""
+      />
+      <img id="redDoor" class="hide" src="/imgs/doors/redDoor.png" alt="" />
+      <img
+        id="openRedDoor"
+        class="hide"
+        src="/imgs/doors/openRedDoor.png"
+        alt=""
+      />
+      <img
+        id="brownDoorOpen"
+        class="hide"
+        src="/imgs/doors/brownDoorOpen.png"
+        alt=""
+      />
+      <img id="brownDoor" class="hide" src="/imgs/doors/brownDoor.png" alt="" />
+      <img
+        id="brownDoorOnlyPiano"
+        class="hide"
+        src="/imgs/doors/brownDoorOnlyPiano.png"
+      />
+      <img
+        id="greenDoorOpen"
+        class="hide"
+        src="/imgs/doors/greenDoorOpen.png"
+        alt=""
+      />
+      <img id="greenDoor" class="hide" src="/imgs/doors/greenDoor.png" alt="" />
+      <img
+        id="openGreenDoor"
+        class="hide"
+        src="/imgs/doors/openGreenDoor.png"
+        alt=""
+      />
+      <img
+        id="usedBlueDoor"
+        class="hide"
+        src="/imgs/doors/usedBlueDoor.png"
+        alt=""
+      />
+      <img
+        id="usedRedDoor"
+        class="hide"
+        src="/imgs/doors/usedRedDoor.png"
+        alt=""
+      />
+      <img
+        id="usedBrownDoor"
+        class="hide"
+        src="/imgs/doors/usedBrownDoor.png"
+        alt=""
+      />
+      <img
+        id="usedGreenDoor"
+        class="hide"
+        src="imgs/doors/usedGreenDoor.png"
+        alt=""
+      />
+      <img
+        id="bookshelf"
+        class="hide"
+        src="/imgs/furniture/bookshelf.png"
+        alt="bookshelf"
+      />
+      <img
+        id="exploreBookshelf"
+        class="hide"
+        src="/imgs/furniture/exploreBookshelf.png"
+      />
+      <img
+        id="usedBookshelf"
+        class="hide"
+        src="/imgs/furniture/usedBookshelf.png"
+      />
+      <img id="desk" class="hide" src="/imgs/furniture/desk.png" alt="desk" />
+      <img
+        id="deskOpen"
+        class="hide"
+        src="/imgs/furniture/deskOpen.png"
+        alt="desk"
+      />
+      <img
+        id="usedDesk"
+        class="hide"
+        src="/imgs/furniture/usedDesk.png"
+        alt="desk"
+      />
+      <img id="piano" class="hide" src="/imgs/furniture/piano.png" />
+      <img
+        id="playPiano"
+        class="hide"
+        src="/imgs/furniture/playPiano.png"
+        alt=""
+      />
+      <img id="bed" class="hide" src="/imgs/furniture/bed.png" />
+      <img
+        id="bedSideTable"
+        class="hide"
+        src="/imgs/furniture/bedSideTable.png"
+        alt=""
+      />
     </main>
-    <div id="lockPickGameContainer" class="startGameContainer">
+    <div id="lockPickGameContainer" class="hide">
       <div id="gameInfo">
         <div id="gameDescription">
           Unlock by finding three access points, the circle will start shaking
@@ -99,7 +199,7 @@
         <div id="successText" class="outcomeText">Well done</div>
       </div>
     </div>
-    <div id="countDownNumber">13</div>
+    <div id="countDownNumber" class="hide">13</div>
     <div class="lockBodyBg">
       <div id="lockContainer">
         <div id="lockPickArm">
@@ -115,7 +215,7 @@
         </div>
       </div>
     </div>
-    <div id="ipodContainer">
+    <div id="ipodContainer" class="hide">
       <svg
         id="ipodSvg"
         viewBox="0 0 668 1112"
@@ -384,7 +484,7 @@
       <button id="menuBackBtn"></button>
       <button id="playPauseBtn"></button>
     </div>
-    <div id="photoContainer">
+    <div id="photoContainer" class="hide">
       <img id="ipodPhoto" class="ipodPhoto" src="/ipod/photos/baldHarry.JPG" />
       <img
         id="ipodPhoto"
@@ -406,8 +506,13 @@
       <a class="back" onclick="plusSlides(-1)">&#10094;</a>
       <a class="forward" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <img id="aboutScreen" src="/ipod/ipodBody/deviceInfoScreen.png" alt="" />
-    <div id="ipodInstruction">
+    <img
+      id="aboutScreen"
+      class="hide"
+      src="/ipod/ipodBody/deviceInfoScreen.png"
+      alt=""
+    />
+    <div id="ipodInstruction" class="hide">
       This is a virtual ipod where you can play music, look at videos and
       photos. <br />
       If you want to go back in the iPod, click the "MENU" button.
@@ -416,12 +521,11 @@
       If you want to go back to the bedroom, click the arrow in the top left
     </div>
     <img
-      class="arrowScale"
+      class="arrowScale hide"
       id="ipodBackArrow"
       src="/imgs/backArrows/ipodBackArrow.png"
-      alt=""
     />
-    <div id="ipodPlayer">
+    <div id="ipodPlayer" class="hide">
       <img
         id="albumCover"
         src="/imgs/ipod/music/Gorillaz/DemonDays/albumCover/GorillazDemonDays.png"
@@ -442,7 +546,7 @@
         loop
       ></audio>
     </div>
-    <div id="pianoBody">
+    <div id="pianoBody" class="hide">
       <ul class="pianoContainer">
         <li class="whiteKey" id="keyFR">A</li>
         <li class="whiteKey" id="keyGR">S</li>

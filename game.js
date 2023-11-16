@@ -2,7 +2,6 @@ const gameBox = document.getElementById(".gameBox");
 const displayText = document.getElementById("displayText");
 const startRoomBg = document.getElementById("startRoomBg");
 const otherRoomBg = document.getElementById("otherRoomBg"); //SCENE
-
 const brownRoomBack = document.getElementById("brownRoomBack"); //CLICK (BACK ARROW)
 const brownRoomBackBookshelfDesk = document.getElementById(
   "brownRoomBackBookshelfDesk"
@@ -12,9 +11,7 @@ const brownRoomBackAllUsed = document.getElementById("brownRoomBackAllUsed"); //
 const blueRoomBack = document.getElementById("blueRoomBack"); //CLICK (BACK ARROW)
 const ipodBackArrow = document.getElementById("ipodBackArrow");
 const redRoomBack = document.getElementById("redRoomBack"); //CLICK (BACK ARROW)
-
 const inventory = document.getElementById("inventory"); //BACKGROUND
-
 const blueKey = document.getElementById("blueKey"); //Click (ITEM)
 const useBlueKey = document.getElementById("useBlueKey"); //Click (ITEM)
 const redKey = document.getElementById("redKey"); //Click (ITEM)
@@ -28,7 +25,6 @@ const useNoteSheet = document.getElementById("useNoteSheet"); //Click (ITEM)
 const useLockPickBlue = document.getElementById("useLockPickBlue"); //CLICK CLICK (ITEM USE)
 const useLockPickRed = document.getElementById("useLockPickRed"); //CLICK CLICK (ITEM USE)
 const useLockPickGreen = document.getElementById("useLockPickGreen"); //CLICK CLICK (ITEM USE)
-
 const lockedDoorText = document.getElementById("lockedTitle"); //TEXT
 const usedDoorTitle = document.getElementById("usedDoorTitle"); //TEXT
 const blueDoor = document.getElementById("blueDoor"); // Click
@@ -46,7 +42,6 @@ const openGreenDoor = document.getElementById("openGreenDoor"); //Click / hover
 const usedBlueDoor = document.getElementById("usedBlueDoor");
 const usedRedDoor = document.getElementById("usedRedDoor");
 const usedBrownDoor = document.getElementById("usedBrownDoor");
-
 const bookshelf = document.getElementById("bookshelf"); //Click //Click (FURNITURE)
 const exploreBookshelf = document.getElementById("exploreBookshelf"); // (FURNITURE)
 const usedBookshelf = document.getElementById("usedBookshelf"); // (FURNITURE)
@@ -109,7 +104,6 @@ const noteBR = document.getElementById("keyBR"); //KEY07
 const noteCR = document.getElementById("keyCR"); //KEY08
 const noteDR = document.getElementById("keyDR"); //KEY10
 const noteER = document.getElementById("keyER"); //KEY12
-
 const noteFL = document.getElementById("keyFL"); //KEY13
 const noteGL = document.getElementById("keyGL"); //KEY15
 const noteAL = document.getElementById("keyAL"); //KEY17

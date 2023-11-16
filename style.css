@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+#startRoomBg {
+  background-image: url(/imgs/backgrounds/startRoom.png);
+  background-position: center;
+  background-size: cover;
+  height: 100svh;
+  width: 100%;
+}
+
+#otherRoomBg {
+  background-image: url(/imgs/backgrounds/otherRoomBg.png);
+  background-position: center;
+  background-size: cover;
+  height: 100svh;
+  width: 100%;
+}
