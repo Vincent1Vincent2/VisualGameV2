@@ -88,6 +88,15 @@
   transform: rotate(20deg);
 }
 
+#blueKeyDeskFirst {
+  cursor: pointer;
+  position: absolute;
+  left: -890%;
+  top: 620%;
+  z-index: 1;
+  transform: rotate(20deg);
+}
+
 #lockPick {
   cursor: pointer;
 }

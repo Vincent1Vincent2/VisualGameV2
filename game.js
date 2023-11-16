@@ -33,12 +33,14 @@ const slotThree = document.getElementById("slotThree");
 const slotFour = document.getElementById("slotFour");
 const slotFive = document.getElementById("slotFive");
 const blueKey = document.getElementById("blueKey"); //Click (ITEM)
+const blueKeyDeskFirst = document.getElementById("blueKeyDeskFirst");
 const useBlueKey = document.getElementById("useBlueKey"); //Click (ITEM)
 const redKey = document.getElementById("redKey"); //Click (ITEM)
 const useRedKey = document.getElementById("useRedKey"); //Click (ITEM)
 const greenKey = document.getElementById("greenKey"); //Click (ITEM)
 const useGreenKey = document.getElementById("useGreenKey"); //Click (ITEM)
 const lockPick = document.getElementById("lockPick"); //Click (ITEM
+const lockPickDeskFirst = document.getElementById("lockPickDeskFirst");
 const useLockPick = document.getElementById("useLockPick"); //Click (ITEM)
 const noteSheet = document.getElementById("noteSheet"); //Click (ITEM)
 const useNoteSheet = document.getElementById("useNoteSheet"); //Click (ITEM)
@@ -228,8 +230,15 @@ const optionTexts = [
     id: 9,
     text: "So a blue key and a lock pick... witch do i use first",
   },
+  {
+    id: 10,
+    text: "It worked, let's check out the room",
+  },
+  {
+    id: 11,
+    text: "There in the drawer a blue key!",
+  },
 ];
-localStorage.clear();
 
 function applyStyling(id) {
   switch (id) {
@@ -323,13 +332,43 @@ function applyStyling(id) {
       blueDoor.classList.remove("hide");
       redDoor.classList.remove("hide");
       brownDoorOnlyPiano.classList.remove("hide");
+      usedBookshelf.classList.add("hide");
+      usedDesk.classList.add("hide");
+      piano.classList.add("hide");
       greenDoor.classList.remove("hide");
-      blueKey.classList.remove("blueKeyDesk");
+      blueKey.classList.add("hide");
       slotOne.classList.add("showFlex");
       useBlueKey.classList.remove("hide");
       lockPick.classList.remove("lockPickBookshelf");
+      lockPick.classList.add("hide");
       slotFour.classList.add("showFlex");
       useLockPick.classList.remove("hide");
+      break;
+    case 10:
+      startRoomBg.classList.remove("hide");
+      otherRoomBg.classList.add("hide");
+      blueDoor.classList.add("hide");
+      openBlueDoor.classList.remove("hide");
+      blueDoorBg.classList.remove("hide");
+      redDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      slotOne.classList.add("hide");
+      useBlueKey.classList.add("hide");
+      lockPick.classList.remove("lockPickBookshelf");
+      lockPick.classList.add("hide");
+      slotFour.classList.add("showFlex");
+      useLockPick.classList.remove("hide");
+      break;
+    case 11:
+      otherRoomBg.classList.remove("hide");
+      deskOpen.classList.remove("hide");
+      slotOne.classList.add("showFlex");
+      blueKeyDeskFirst.classList.remove("hide");
+      desk.classList.add("hide");
+      bookshelf.classList.add("hide");
+      piano.classList.add("hide");
+      break;
   }
 }
 
@@ -389,8 +428,21 @@ brownRoomBackBookshelfDesk.addEventListener("click", function () {
   applyStyling(currentId);
 });
 
-//LockPickMinigame
+useBlueKey.addEventListener("click", function () {
+  currentId = 10;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
 
+desk.addEventListener("click", function () {
+  currentId = 11;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+//Lock Pick Mini game
 startBtn.addEventListener("click", function () {
   lockPickGameContainer.style.display = "none";
   countDownNumber.classList.remove("hide");
