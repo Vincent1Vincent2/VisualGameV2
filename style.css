@@ -38,7 +38,8 @@
   align-items: center;
   text-align: center;
   position: fixed;
-  top: 32%;
+  top: 30%;
+  padding: 0rem 20rem;
 }
 
 .arrowScale {
@@ -75,15 +76,23 @@
   cursor: pointer;
 }
 
+#useBlueKey {
+  cursor: pointer;
+}
+
 .blueKeyDesk {
   position: absolute;
   left: -880%;
-  top: 620%;
+  top: 310%;
   z-index: 1;
-  transform: rotate(-10deg);
+  transform: rotate(20deg);
 }
 
 #lockPick {
+  cursor: pointer;
+}
+
+#useLockPick {
   cursor: pointer;
 }
 
@@ -96,12 +105,27 @@
   transform: rotate(-10deg);
 }
 
+#redKey {
+  cursor: pointer;
+}
+
+#useRedKey {
+  cursor: pointer;
+}
+
 .redKeyBed {
   position: absolute;
   left: -880%;
   top: 600%;
   z-index: 1;
   transform: rotate(40deg);
+}
+#greenKey {
+  cursor: pointer;
+}
+
+#useGreenKey {
+  cursor: pointer;
 }
 
 .greenKeyFloor {
@@ -111,6 +135,13 @@
   cursor: pointer;
   transform: rotate(-120deg);
 }
+#noteSheet {
+  cursor: pointer;
+}
+
+#useNoteSheet {
+  cursor: pointer;
+}
 
 .noteSheetFloor {
   position: absolute;
@@ -118,6 +149,62 @@
   left: -150%;
   transform: rotate3d(1, 1, 1, 25deg);
   cursor: pointer;
+}
+
+.lockPickBtn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 10.65rem 6.2rem;
+  z-index: 2;
+}
+
+#useLockPickBlue {
+  position: absolute;
+  top: 50%;
+  left: 17.8%;
+  border: solid 4px rgba(255, 255, 255, 0.6);
+}
+
+#useLockPickBlue:hover {
+  animation: highlight 0.5s step-end infinite;
+}
+
+#useLockPickRed {
+  position: absolute;
+  left: 37.8%;
+  top: 50%;
+  border: solid 4px rgba(255, 255, 255, 0.6);
+}
+#useLockPickRed:hover {
+  animation: highlight 0.5s step-end infinite;
+}
+
+#useLockPickGreen {
+  position: absolute;
+  left: 77.8%;
+  top: 50%;
+  border: solid 4px rgba(255, 255, 255, 0.6);
+}
+
+#useLockPickGreen:hover {
+  animation: highlight 0.5s step-end infinite;
+}
+
+@keyframes highlight {
+  0% {
+    border: solid 4px rgba(255, 255, 255, 0.1);
+  }
+  25% {
+    border: solid 4px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    border: solid 4px rgba(255, 255, 255, 0.6);
+  }
+
+  100% {
+    border: solid 4px white;
+  }
 }
 
 #blueDoor {
@@ -216,7 +303,16 @@
   transition: transform 1s, left 1s;
 }
 
+#brownDoorOnlyPiano {
+  cursor: pointer;
+  position: absolute;
+  top: 57.5%;
+  left: 60%;
+  scale: 2;
+}
+
 #usedBrownDoor {
+  cursor: pointer;
   position: absolute;
   top: 57.5%;
   left: 60%;
