@@ -196,6 +196,14 @@ const optionTexts = [
     id: 5,
     text: "I wonder what to check next?",
   },
+  {
+    id: 6,
+    text: "There in the drawer a blue key!",
+  },
+  {
+    id: 7,
+    text: "This will come in handy!",
+  },
 ];
 
 function applyStyling(id) {
@@ -242,6 +250,22 @@ function applyStyling(id) {
       usedBookshelf.classList.remove("hide");
       desk.classList.remove("hide");
       piano.classList.remove("hide");
+      break;
+    case 6:
+      otherRoomBg.classList.remove("hide");
+      bookshelf.classList.add("hide");
+      exploreBookshelf.classList.add("hide");
+      usedBookshelf.classList.add("hide");
+      desk.classList.add("hide");
+      piano.classList.add("hide");
+      deskOpen.classList.remove("hide");
+      slotOne.classList.add("showFlex");
+      blueKey.classList.remove("hide");
+      break;
+    case 7:
+      otherRoomBg.classList.remove("hide");
+      brownRoomBack.classList.remove("hide");
+      deskOpen.classList.add("hide");
   }
 }
 
@@ -271,18 +295,20 @@ brownRoomBack.addEventListener("click", function () {
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
-  isBookshelfChecked();
 });
 
-function isBookshelfChecked() {
-  if (slotFour.classList.add !== "hide") {
-    currentId = 5;
-    updateText(currentId);
-    applyStyling(currentId);
-  } else {
-    currentId = 2;
-    bookshelf.classList.remove("hide");
-  }
-}
+desk.addEventListener("click", function () {
+  currentId = 6;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+blueKey.addEventListener("click", function () {
+  currentId = 7;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
 
 startGame();
