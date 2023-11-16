@@ -3,6 +3,20 @@ const displayText = document.getElementById("displayText");
 const startRoomBg = document.getElementById("startRoomBg");
 const otherRoomBg = document.getElementById("otherRoomBg"); //SCENE
 const brownRoomBack = document.getElementById("brownRoomBack"); //CLICK (BACK ARROW)
+
+const brownRoomBackBookshelfFirst = document.getElementById(
+  "brownRoomBackBookshelfFirst"
+);
+const brownRoomBackDeskAfterBookshelf = document.getElementById(
+  "brownRoomBackDeskAfterBookshelf"
+);
+const brownRoomBackDeskFirst = document.getElementById(
+  "brownRoomBackDeskFirst"
+);
+const brownRoomBackBookshelfAfterDesk = document.getElementById(
+  "brownRoomBackBookshelfAfterDesk"
+);
+
 const brownRoomBackBookshelfDesk = document.getElementById(
   "brownRoomBackBookshelfDesk"
 );
@@ -49,9 +63,11 @@ const usedBlueDoor = document.getElementById("usedBlueDoor");
 const usedRedDoor = document.getElementById("usedRedDoor");
 const usedBrownDoor = document.getElementById("usedBrownDoor");
 const bookshelf = document.getElementById("bookshelf"); //Click //Click (FURNITURE)
+const bookshelfDeskFirst = document.getElementById("bookshelfDeskFirst");
 const exploreBookshelf = document.getElementById("exploreBookshelf"); // (FURNITURE)
 const usedBookshelf = document.getElementById("usedBookshelf"); // (FURNITURE)
 const desk = document.getElementById("desk"); //Click (FURNITURE)
+const deskBookshelfFirst = document.getElementById("deskBookshelfFirst");
 const deskOpen = document.getElementById("deskOpen"); // (FURNITURE)
 const usedDesk = document.getElementById("usedDesk"); //(FURNITURE)
 const piano = document.getElementById("piano"); //Click
