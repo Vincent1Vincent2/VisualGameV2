@@ -9,6 +9,10 @@
   display: none;
 }
 
+.showFlex {
+  display: flex;
+}
+
 #startRoomBg {
   background-image: url(/imgs/backgrounds/startRoom.png);
   background-position: center;
@@ -35,6 +39,23 @@
   text-align: center;
   position: fixed;
   top: 32%;
+}
+
+#inventoryContainer {
+  position: absolute;
+  top: 5%;
+  left: 4%;
+}
+
+.inventorySlot {
+  height: 10vh;
+  width: 120px;
+  background: rgba(82, 82, 82, 0.2);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 #blueDoor {
@@ -158,6 +179,13 @@
 
 #bookshelf:hover {
   cursor: pointer;
+  scale: 2.2;
+}
+
+#exploreBookshelf {
+  position: absolute;
+  top: 65%;
+  left: 45%;
   scale: 2.2;
 }
 

@@ -11,7 +11,13 @@ const brownRoomBackAllUsed = document.getElementById("brownRoomBackAllUsed"); //
 const blueRoomBack = document.getElementById("blueRoomBack"); //CLICK (BACK ARROW)
 const ipodBackArrow = document.getElementById("ipodBackArrow");
 const redRoomBack = document.getElementById("redRoomBack"); //CLICK (BACK ARROW)
-const inventory = document.getElementById("inventory"); //BACKGROUND
+const inventoryContainer = document.getElementById("inventoryContainer"); //BACKGROUND
+const inventorySlot = document.getElementsByClassName("inventorySlot");
+const slotOne = document.getElementById("slotOne");
+const slotTwo = document.getElementById("slotTwo");
+const slotThree = document.getElementById("slotThree");
+const slotFour = document.getElementById("slotFour");
+const slotFive = document.getElementById("slotFive");
 const blueKey = document.getElementById("blueKey"); //Click (ITEM)
 const useBlueKey = document.getElementById("useBlueKey"); //Click (ITEM)
 const redKey = document.getElementById("redKey"); //Click (ITEM)
@@ -178,6 +184,10 @@ const optionTexts = [
     id: 2,
     text: "What is this then...",
   },
+  {
+    id: 3,
+    text: "Look in the bookshelf, a lock pick!",
+  },
 ];
 
 function applyStyling(id) {
@@ -201,6 +211,12 @@ function applyStyling(id) {
       bookshelf.classList.remove("hide");
       desk.classList.remove("hide");
       piano.classList.remove("hide");
+      break;
+    case 3:
+      bookshelf.classList.add("hide");
+      desk.classList.add("hide");
+      piano.classList.add("hide");
+      exploreBookshelf.classList.remove("hide");
       break;
   }
 }
