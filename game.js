@@ -149,3 +149,74 @@ const note21 = document.getElementById("note21");
 const note22 = document.getElementById("note22");
 const note23 = document.getElementById("note23");
 const note24 = document.getElementById("note24");
+
+let currentId = 1;
+
+function startGame() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const storedId = localStorage.getItem("currentId");
+    currentId = storedId ? parseInt(storedId) : 1;
+    updateText(currentId);
+    applyStyling(currentId);
+  });
+}
+
+function updateText(id) {
+  const textData = optionTexts.find((item) => item.id === id);
+
+  if (textData) {
+    displayText.textContent = textData.text;
+  }
+}
+
+const optionTexts = [
+  {
+    id: 1,
+    text: "You've been locked inside a house and need to find the right keys to make it out!",
+  },
+  {
+    id: 2,
+    text: "What is this then...",
+  },
+];
+
+function applyStyling(id) {
+  switch (id) {
+    case 1:
+      startRoomBg.classList.remove("hide");
+      blueDoor.classList.remove("hide");
+      redDoor.classList.remove("hide");
+      brownDoor.classList.remove("hide");
+      brownDoorBg.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      break;
+    case 2:
+      startRoomBg.classList.add("hide");
+      blueDoor.classList.add("hide");
+      redDoor.classList.add("hide");
+      brownDoor.classList.add("hide");
+      brownDoorBg.classList.add("hide");
+      greenDoor.classList.add("hide");
+      otherRoomBg.classList.remove("hide");
+      bookshelf.classList.remove("hide");
+      desk.classList.remove("hide");
+      piano.classList.remove("hide");
+      break;
+  }
+}
+
+brownDoor.addEventListener("click", function () {
+  currentId = 2;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+bookshelf.addEventListener("click", function () {
+  currentId = 3;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+startGame();
