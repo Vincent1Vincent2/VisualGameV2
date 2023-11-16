@@ -41,10 +41,24 @@
   top: 32%;
 }
 
+#brownRoomBack {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+
+  width: 50px;
+  height: 30px;
+}
+
+.arrowScale:hover {
+  cursor: pointer;
+  scale: 1.5;
+}
+
 #inventoryContainer {
   position: absolute;
   top: 5%;
-  left: 4%;
+  left: 89%;
 }
 
 .inventorySlot {
@@ -56,6 +70,20 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
+}
+
+#lockPick {
+  cursor: pointer;
+}
+
+.lockPickBookshelf {
+  display: block;
+  position: absolute;
+  left: -850%;
+  top: 500%;
+  z-index: 1;
+  filter: contrast(2);
+  transform: rotate(-10deg);
 }
 
 #blueDoor {
@@ -187,6 +215,13 @@
   top: 65%;
   left: 45%;
   scale: 2.2;
+}
+
+#usedBookshelf {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  scale: 1.8;
 }
 
 #desk {

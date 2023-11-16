@@ -188,6 +188,14 @@ const optionTexts = [
     id: 3,
     text: "Look in the bookshelf, a lock pick!",
   },
+  {
+    id: 4,
+    text: "This will come in handy!",
+  },
+  {
+    id: 5,
+    text: "I wonder what to check next?",
+  },
 ];
 
 function applyStyling(id) {
@@ -216,8 +224,24 @@ function applyStyling(id) {
       bookshelf.classList.add("hide");
       desk.classList.add("hide");
       piano.classList.add("hide");
+      otherRoomBg.classList.remove("hide");
       exploreBookshelf.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      lockPick.classList.remove("hide");
       break;
+    case 4:
+      otherRoomBg.classList.remove("hide");
+      lockPick.classList.remove("lockPickBookshelf");
+      brownRoomBack.classList.remove("hide");
+      break;
+    case 5:
+      brownRoomBack.classList.add("hide");
+      exploreBookshelf.classList.add("hide");
+      otherRoomBg.classList.remove("hide");
+      lockPick.classList.remove("hide");
+      usedBookshelf.classList.remove("hide");
+      desk.classList.remove("hide");
+      piano.classList.remove("hide");
   }
 }
 
@@ -234,5 +258,31 @@ bookshelf.addEventListener("click", function () {
   updateText(currentId);
   applyStyling(currentId);
 });
+
+lockPick.addEventListener("click", function () {
+  currentId = 4;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+brownRoomBack.addEventListener("click", function () {
+  currentId = 5;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+  isBookshelfChecked();
+});
+
+function isBookshelfChecked() {
+  if (slotFour.classList.add !== "hide") {
+    currentId = 5;
+    updateText(currentId);
+    applyStyling(currentId);
+  } else {
+    currentId = 2;
+    bookshelf.classList.remove("hide");
+  }
+}
 
 startGame();
