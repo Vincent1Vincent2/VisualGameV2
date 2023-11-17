@@ -356,15 +356,28 @@
 }
 
 #brownDoorOnlyPiano {
-  cursor: pointer;
   position: absolute;
   top: 57.5%;
   left: 60%;
   scale: 2;
 }
 
-#usedBrownDoor {
+#brownDoorPianoTime {
   cursor: pointer;
+  position: absolute;
+  top: 57.5%;
+  left: 60%;
+  scale: 2;
+  transition: transform 1s, left 1s;
+}
+
+#brownDoorPianoTime:hover {
+  left: 58.6%;
+  transform: rotate3d(0, 30, 0, 45deg);
+  transition: transform 1s, left 1s;
+}
+
+#usedBrownDoor {
   position: absolute;
   top: 57.5%;
   left: 60%;
@@ -489,11 +502,30 @@
   scale: 2.4;
 }
 
+#usePiano {
+  position: absolute;
+  top: 70%;
+  left: 75%;
+  scale: 2.2;
+}
+
+#usePiano:hover {
+  cursor: pointer;
+  scale: 2.4;
+}
+
 #playPiano {
   position: absolute;
   top: 55%;
   left: 45%;
   scale: 2.2;
+}
+
+#usedPiano {
+  position: absolute;
+  top: 70%;
+  left: 75%;
+  scale: 2;
 }
 
 #bed {
@@ -533,8 +565,10 @@
 
 #ipodBackArrow {
   position: absolute;
+  top: 5%;
   left: 5%;
-  top: 15%;
+  width: 50px;
+  height: 30px;
 }
 
 .blueFill:hover {
@@ -747,6 +781,7 @@
 }
 
 .gameBtn {
+  cursor: pointer;
   padding: 1.2rem 5rem;
   font-size: 1.5rem;
   background-color: rgba(255, 255, 255, 0.303);
@@ -1222,52 +1257,52 @@
 
 #blackFR {
   position: absolute;
-  left: 29.7%;
+  left: 36.3%;
   top: 43.7%;
 }
 #blackGR {
   position: absolute;
-  left: 33%;
+  left: 38.45%;
   top: 43.7%;
 }
 #blackAR {
   position: absolute;
-  left: 39.5%;
+  left: 42.9%;
   top: 43.7%;
 }
 #blackCR {
   position: absolute;
-  left: 42.8%;
+  left: 45.1%;
   top: 43.7%;
 }
 #blackDR {
   position: absolute;
-  left: 46.1%;
+  left: 47.35%;
   top: 43.7%;
 }
 
 #blackFL {
   position: absolute;
-  left: 52.75%;
+  left: 51.8%;
   top: 43.7%;
 }
 #blackGL {
   position: absolute;
-  left: 55.9%;
+  left: 54%;
   top: 43.7%;
 }
 #blackAL {
   position: absolute;
-  left: 59.2%;
+  left: 56.4%;
   top: 43.7%;
 }
 #blackCL {
   position: absolute;
-  left: 65.8%;
+  left: 60.7%;
   top: 43.7%;
 }
 #blackDL {
   position: absolute;
-  left: 69%;
+  left: 62.8%;
   top: 43.7%;
 }
