@@ -117,8 +117,10 @@ const settingsButton = document.getElementById("settingsButton");
 const photoButton = document.getElementById("photoButton");
 const videoButton = document.getElementById("videoButton");
 const musicButton = document.getElementById("musicButton");
-const photoContainer = document.getElementById("photoContainer");
 const ipodMusicPlayer = document.getElementById("ipodPlayer");
+const videoContainer = document.getElementById("videoContainer");
+const ipodVideo = document.getElementById("ipodVideo");
+const photoContainer = document.getElementById("photoContainer");
 
 //Piano Keyboard MiniGame
 const pianoBody = document.getElementById("pianoBody");
@@ -765,9 +767,17 @@ menuBackBtn.addEventListener("click", function () {
   menuBackBtn.classList.add("hide");
   aboutScreen.classList.add("hide");
   ipodMusicPlayer.classList.add("hide");
+  ipodVideo.style.display = "none";
+  playPauseBtn.style.display = "none";
+  ipodContainer.style.width = "95%";
+  ipodVideo.pause();
+  ipodVideo.currentTime = 0;
   trackOne.pause();
-  cancelAnimationFrame(rAF);
   trackOne.currentTime = 0;
+});
+
+playPauseBtn.addEventListener("click", function () {
+  playPauseVideo();
 });
 
 settingsButton.addEventListener("click", function () {
@@ -781,6 +791,15 @@ photoButton.addEventListener("click", function () {
   settingsScreen.classList.add("hide");
   photoContainer.classList.remove("hide");
   menuBackBtn.classList.remove("hide");
+});
+
+videoButton.addEventListener("click", function () {
+  hideMenuBtns();
+  settingsScreen.classList.add("hide");
+  playPauseBtn.style.display = "block";
+  menuBackBtn.classList.remove("hide");
+  ipodVideo.style.display = "block";
+  ipodContainer.style.width = "97.8%";
 });
 
 musicButton.addEventListener("click", function () {
@@ -803,6 +822,16 @@ function hideMenuBtns() {
 
 function showMenuBtns() {
   menuButtons.classList.remove("hide");
+}
+
+function playPauseVideo() {
+  if (ipodVideo.paused) {
+    ipodVideo.play();
+  } else {
+    ipodVideo.pause();
+
+    ipodVideo.currentTime = 0;
+  }
 }
 
 let slideIndex = 0;
@@ -835,6 +864,7 @@ const trackOne = document.getElementById("trackOne");
 const currentTimeCont = document.getElementById("currentTime");
 const durationCont = document.getElementById("duration");
 const playTimeBar = document.getElementById("playTimeBar");
+
 let rAF = null;
 
 const whilePlaying = () => {

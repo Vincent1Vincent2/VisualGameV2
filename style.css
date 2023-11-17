@@ -511,7 +511,7 @@
 #menuBackBtn {
   cursor: pointer;
   position: absolute;
-  left: 47.85%;
+  left: 45.8%;
   top: 53.2%;
   padding: 1rem 2.5rem;
   background-color: transparent;
@@ -521,8 +521,8 @@
 #playPauseBtn {
   cursor: pointer;
   position: relative;
-  left: 45%;
-  top: -155px;
+  left: -14.5%;
+  top: 355px;
   padding: 1rem 1.85rem;
   background-color: transparent;
   border: none;
@@ -538,10 +538,18 @@
   text-align: left;
 }
 
+#ipodVideo {
+  position: absolute;
+  display: block;
+  top: 14.6%;
+  left: 40%;
+  width: 350px;
+}
+
 #photoContainer {
   position: relative;
   top: -1008.1px;
-  left: -41.3px;
+  left: -70.3px;
 }
 
 #ipodPhoto {
@@ -558,7 +566,7 @@
 #aboutScreen {
   position: absolute;
   top: 14.6%;
-  left: 38.01%;
+  left: 37.01%;
   width: 501px;
   height: 350px;
   border-bottom-left-radius: 20px;
@@ -579,7 +587,7 @@
 }
 
 .forward {
-  left: 61.5%;
+  left: 59%;
 }
 
 .forward:hover,
@@ -589,7 +597,8 @@
 
 #ipodPlayer {
   position: relative;
-  top: -930px;
+  top: -950px;
+  left: -1%;
 }
 
 #albumCover {
@@ -650,8 +659,8 @@
 #playMusicBtn {
   padding: 1.25rem 2.2rem;
   position: absolute;
-  top: 670px;
-  left: 48.2%;
+  top: 690px;
+  left: 47%;
   background-color: transparent;
   cursor: pointer;
   z-index: 2;
