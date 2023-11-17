@@ -263,7 +263,15 @@ const optionTexts = [
   },
   {
     id: 17,
-    text: "So a lockPick and a blue key... what to use first...",
+    text: "On the bed.. a red key and whats that on the bed side table?",
+  },
+  {
+    id: 18,
+    text: "Nice a red key",
+  },
+  {
+    id: 18,
+    text: "iPod",
   },
 ];
 
@@ -398,6 +406,7 @@ function applyStyling(id) {
       lockPick.classList.add("hide");
       slotFour.classList.add("showFlex");
       useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
       break;
     case 11:
       otherRoomBg.classList.remove("hide");
@@ -465,6 +474,44 @@ function applyStyling(id) {
       exploreBookshelf.classList.add("hide");
       brownRoomBackBookshelfAfterDesk.classList.add("hide");
       brownRoomBackDeskBookshelf.classList.remove("hide");
+      break;
+    case 17:
+      otherRoomBg.classList.remove("hide");
+      openBlueDoor.classList.add("hide");
+      blueDoorBg.classList.add("hide");
+      redDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      bed.classList.remove("hide");
+      bedSideTable.classList.remove("hide");
+      ipodContainer.classList.remove("hide");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
+      slotFour.classList.add("showFlex");
+      slotTwo.classList.add("showFlex");
+      redKey.classList.remove("hide");
+      break;
+    case 18:
+      otherRoomBg.classList.remove("hide");
+      bed.classList.remove("hide");
+      bedSideTable.classList.remove("hide");
+      ipodContainer.classList.remove("hide");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
+      slotFour.classList.add("showFlex");
+      slotTwo.classList.add("showFlex");
+      redKey.classList.remove("hide");
+      redKey.classList.remove("redKeyBed");
+      redKey.style.pointerEvents = "none";
+      break;
+    case 19:
+      ipodSvg.style.width = "600px";
+      ipodContainer.classList.add("showFlex");
+      ipodContainer.classList.add("ipodContainer");
+      ipodContainer.classList.remove("hide");
+      ipodContainer.classList.remove("ipodContainerTable");
+      ipodBackArrow.classList.remove("hide");
+      ipodInstruction.classList.remove("hide");
   }
 }
 
@@ -573,6 +620,27 @@ brownRoomBackBookshelfAfterDesk.addEventListener("click", function () {
 
 brownRoomBackDeskBookshelf.addEventListener("click", function () {
   currentId = 9;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+openBlueDoor.addEventListener("click", function () {
+  currentId = 17;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+redKey.addEventListener("click", function () {
+  currentId = 18;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+ipodContainer.addEventListener("click", function () {
+  currentId = 19;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
@@ -688,6 +756,143 @@ function gameTimerCountDown() {
     const loseSpan = document.getElementById("lose");
     loseSpan.classList.remove("win");
   }, 13000);
+}
+
+//iPod
+menuBackBtn.addEventListener("click", function () {
+  showMenuBtns();
+  photoContainer.classList.add("hide");
+  menuBackBtn.classList.add("hide");
+  aboutScreen.classList.add("hide");
+  ipodMusicPlayer.classList.add("hide");
+  trackOne.pause();
+  cancelAnimationFrame(rAF);
+  trackOne.currentTime = 0;
+});
+
+settingsButton.addEventListener("click", function () {
+  hideMenuBtns();
+  settingsScreen.classList.remove("hide");
+  menuBackBtn.classList.remove("hide");
+});
+
+photoButton.addEventListener("click", function () {
+  hideMenuBtns();
+  settingsScreen.classList.add("hide");
+  photoContainer.classList.remove("hide");
+  menuBackBtn.classList.remove("hide");
+});
+
+musicButton.addEventListener("click", function () {
+  hideMenuBtns();
+  menuBackBtn.classList.remove("hide");
+  settingsScreen.classList.add("hide");
+  ipodMusicPlayer.classList.remove("hide");
+});
+
+darkModeButton.addEventListener("click", function () {});
+
+deviceInfoButton.addEventListener("click", function () {
+  aboutScreen.classList.remove("hide");
+  settingsScreen.classList.add("hide");
+});
+
+function hideMenuBtns() {
+  menuButtons.classList.add("hide");
+}
+
+function showMenuBtns() {
+  menuButtons.classList.remove("hide");
+}
+
+let slideIndex = 0;
+
+function plusSlides(slideNumber) {
+  showSlides((slideIndex += slideNumber));
+}
+
+function currentSlide(slideNumber) {
+  showSlides((slideIndex = slideNumber));
+}
+
+function showSlides(slideNumber) {
+  let slides = document.getElementsByClassName("ipodPhoto");
+  if (slideNumber > slides.length) {
+    slideIndex = 1;
+  }
+  if (slideNumber < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+}
+
+const playMusicBtn = document.getElementById("playMusicBtn");
+const trackOne = document.getElementById("trackOne");
+const currentTimeCont = document.getElementById("currentTime");
+const durationCont = document.getElementById("duration");
+const playTimeBar = document.getElementById("playTimeBar");
+let rAF = null;
+
+const whilePlaying = () => {
+  playTimeBar.value = Math.floor(trackOne.currentTime);
+  currentTimeCont.textContent = calculateTime(playTimeBar.value);
+  rAF = requestAnimationFrame(whilePlaying);
+};
+
+function playTrackOne() {
+  if (trackOne.paused) {
+    trackOne.play();
+    requestAnimationFrame(whilePlaying);
+  } else {
+    trackOne.pause();
+    cancelAnimationFrame(rAF);
+    trackOne.currentTime = 0;
+  }
+}
+
+playMusicBtn.addEventListener("click", function () {
+  playTrackOne();
+});
+
+trackOne.addEventListener("loadedmetadata", function () {
+  displayTrackOneDuration(trackOne.duration);
+});
+
+playTimeBar.addEventListener("change", () => {
+  trackOne.currentTime = playTimeBar.value;
+});
+
+trackOne.addEventListener("timeupdate", () => {
+  playTimeBar.value = Math.floor(trackOne.currentTime);
+});
+
+const calculateTime = (secs) => {
+  const minutes = Math.floor(secs / 60);
+  const seconds = Math.floor(secs % 60);
+  const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  return `${minutes}:${returnedSeconds}`;
+};
+
+const displayTrackOneDuration = () => {
+  durationCont.textContent = calculateTime(trackOne.duration);
+};
+
+const setPlayTimeBarMax = () => {
+  playTimeBar.max = Math.floor(trackOne.duration);
+};
+
+if (trackOne.readyState > 0) {
+  displayTrackOneDuration();
+  setPlayTimeBarMax();
+} else {
+  trackOne.addEventListener("loadedmetadata", function () {
+    displayTrackOneDuration();
+    setPlayTimeBarMax();
+  });
 }
 
 //Piano

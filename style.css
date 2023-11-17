@@ -135,7 +135,7 @@
 .redKeyBed {
   position: absolute;
   left: -880%;
-  top: 600%;
+  top: 300%;
   z-index: 1;
   transform: rotate(40deg);
 }
@@ -487,8 +487,21 @@
   z-index: 2;
 }
 
+.ipodContainer {
+  height: 100svh;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+}
+
 #ipodSvg {
   width: 60px;
+}
+
+#ipodBackArrow {
+  position: absolute;
+  left: 5%;
+  top: 15%;
 }
 
 .blueFill:hover {
@@ -498,8 +511,8 @@
 #menuBackBtn {
   cursor: pointer;
   position: absolute;
-  left: 38.4%;
-  top: 53%;
+  left: 47.85%;
+  top: 53.2%;
   padding: 1rem 2.5rem;
   background-color: transparent;
   border: none;
@@ -509,10 +522,10 @@
   cursor: pointer;
   position: relative;
   left: 45%;
-  top: -165px;
+  top: -155px;
   padding: 1rem 1.85rem;
-  border: none;
   background-color: transparent;
+  border: none;
 }
 
 #ipodInstruction {
@@ -521,14 +534,14 @@
   z-index: 2;
   position: absolute;
   top: 10%;
-  left: 62%;
+  left: 66%;
   text-align: left;
 }
 
 #photoContainer {
   position: relative;
-  top: -979.5px;
-  left: -70.2px;
+  top: -1008.1px;
+  left: -41.3px;
 }
 
 #ipodPhoto {
@@ -544,8 +557,8 @@
 
 #aboutScreen {
   position: absolute;
-  top: 17%;
-  left: 37%;
+  top: 14.6%;
+  left: 38.01%;
   width: 501px;
   height: 350px;
   border-bottom-left-radius: 20px;
@@ -566,7 +579,7 @@
 }
 
 .forward {
-  left: 59%;
+  left: 61.5%;
 }
 
 .forward:hover,
@@ -581,16 +594,16 @@
 
 #albumCover {
   position: absolute;
-  top: -15px;
-  left: 38.5%;
+  top: -25px;
+  left: 40%;
   width: 200px;
   z-index: 2;
 }
 
 #albumInfo {
   position: absolute;
-  top: 15px;
-  left: 47.5%;
+  top: 7px;
+  left: 50%;
   z-index: 2;
 }
 
@@ -601,8 +614,8 @@
 
 #playTimeBar {
   position: absolute;
-  top: 215px;
-  left: 38.5%;
+  top: 200px;
+  left: 39.88%;
   appearance: none;
   width: 300px;
   height: 25px;
@@ -624,21 +637,21 @@
 
 #currentTime {
   position: absolute;
-  top: 255px;
-  left: 38.4%;
+  top: 230px;
+  left: 39.9%;
 }
 
 #duration {
   position: absolute;
-  top: 255px;
-  left: 49.1%;
+  top: 230px;
+  left: 52%;
 }
 
 #playMusicBtn {
   padding: 1.25rem 2.2rem;
   position: absolute;
-  top: 83.5%;
-  left: 49%;
+  top: 670px;
+  left: 48.2%;
   background-color: transparent;
   cursor: pointer;
   z-index: 2;
