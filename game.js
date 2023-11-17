@@ -20,6 +20,9 @@ const brownRoomBackBookshelfAfterDesk = document.getElementById(
 const brownRoomBackBookshelfDesk = document.getElementById(
   "brownRoomBackBookshelfDesk"
 );
+const brownRoomBackDeskBookshelf = document.getElementById(
+  "brownRoomBackDeskBookshelf"
+);
 const brownRoomBackPiano = document.getElementById("brownRoomBackPiano"); //CLICK (BACK ARROW)
 const brownRoomBackAllUsed = document.getElementById("brownRoomBackAllUsed"); //CLICK (BACK ARROW)
 const blueRoomBack = document.getElementById("blueRoomBack"); //CLICK (BACK ARROW)
@@ -220,7 +223,7 @@ const optionTexts = [
   },
   {
     id: 7,
-    text: "Nice a blue key.",
+    text: "Nice a blue key",
   },
   {
     id: 8,
@@ -237,6 +240,30 @@ const optionTexts = [
   {
     id: 11,
     text: "There in the drawer a blue key!",
+  },
+  {
+    id: 12,
+    text: "Nice, this will be useful",
+  },
+  {
+    id: 13,
+    text: "Let's see what more i can find...",
+  },
+  {
+    id: 14,
+    text: "Look there, a lock pick on the shelf!",
+  },
+  {
+    id: 15,
+    text: "Nice, this will come in handy",
+  },
+  {
+    id: 16,
+    text: "Only the piano left now",
+  },
+  {
+    id: 17,
+    text: "So a lockPick and a blue key... what to use first...",
   },
 ];
 
@@ -275,8 +302,10 @@ function applyStyling(id) {
       otherRoomBg.classList.remove("hide");
       lockPick.classList.remove("lockPickBookshelf");
       brownRoomBackBookshelfFirst.classList.remove("hide");
+      exploreBookshelf.classList.remove("hide");
       slotFour.classList.add("showFlex");
       lockPick.classList.remove("hide");
+      lockPick.style.pointerEvents = "none";
       break;
     case 5:
       otherRoomBg.classList.remove("hide");
@@ -288,6 +317,7 @@ function applyStyling(id) {
       lockPick.classList.remove("lockPickBookshelf");
       slotFour.classList.add("showFlex");
       lockPick.classList.remove("hide");
+      lockPick.style.pointerEvents = "none";
       break;
     case 6:
       otherRoomBg.classList.remove("hide");
@@ -300,9 +330,11 @@ function applyStyling(id) {
       lockPick.classList.remove("lockPickBookshelf");
       slotFour.classList.add("showFlex");
       lockPick.classList.remove("hide");
+      lockPick.style.pointerEvents = "none";
       break;
     case 7:
       otherRoomBg.classList.remove("hide");
+      deskOpen.classList.remove("hide");
       blueKey.classList.remove("blueKeyDesk");
       brownRoomBackDeskAfterBookshelf.classList.remove("hide");
       slotOne.classList.add("showFlex");
@@ -310,6 +342,8 @@ function applyStyling(id) {
       lockPick.classList.remove("lockPickBookshelf");
       slotFour.classList.add("showFlex");
       lockPick.classList.remove("hide");
+      blueKey.style.pointerEvents = "none";
+      lockPick.style.pointerEvents = "none";
       break;
     case 8:
       brownRoomBackBookshelfDesk.classList.remove("hide");
@@ -324,6 +358,8 @@ function applyStyling(id) {
       lockPick.classList.remove("lockPickBookshelf");
       slotFour.classList.add("showFlex");
       lockPick.classList.remove("hide");
+      blueKey.style.pointerEvents = "none";
+      lockPick.style.pointerEvents = "none";
       break;
     case 9:
       brownRoomBackBookshelfDesk.classList.add("hide");
@@ -343,6 +379,9 @@ function applyStyling(id) {
       lockPick.classList.add("hide");
       slotFour.classList.add("showFlex");
       useLockPick.classList.remove("hide");
+      lockPickDeskFirst.classList.add("hide");
+      blueKeyDeskFirst.classList.add("hide");
+      brownRoomBackDeskBookshelf.classList.add("hide");
       break;
     case 10:
       startRoomBg.classList.remove("hide");
@@ -369,6 +408,63 @@ function applyStyling(id) {
       bookshelf.classList.add("hide");
       piano.classList.add("hide");
       break;
+    case 12:
+      otherRoomBg.classList.remove("hide");
+      deskOpen.classList.remove("hide");
+      blueKeyDeskFirst.classList.remove("blueKeyDeskFirst");
+      brownRoomBackDeskFirst.classList.remove("hide");
+      slotOne.classList.add("showFlex");
+      blueKeyDeskFirst.classList.remove("hide");
+      break;
+    case 13:
+      otherRoomBg.classList.remove("hide");
+      deskOpen.classList.add("hide");
+      usedDesk.classList.remove("hide");
+      slotOne.classList.add("showFlex");
+      blueKeyDeskFirst.classList.remove("hide");
+      blueKeyDeskFirst.classList.remove("blueKeyDeskFirst");
+      bookshelfDeskFirst.classList.remove("hide");
+      piano.classList.remove("hide");
+      brownRoomBackDeskFirst.classList.add("hide");
+      blueKeyDeskFirst.style.pointerEvents = "none";
+      break;
+    case 14:
+      otherRoomBg.classList.remove("hide");
+      usedDesk.classList.add("hide");
+      bookshelfDeskFirst.classList.add("hide");
+      piano.classList.add("hide");
+      slotOne.classList.add("showFlex");
+      blueKeyDeskFirst.classList.remove("hide");
+      blueKeyDeskFirst.classList.remove("blueKeyDeskFirst");
+      slotFour.classList.add("showFlex");
+      lockPickDeskFirst.classList.remove("hide");
+      exploreBookshelf.classList.remove("hide");
+      break;
+    case 15:
+      otherRoomBg.classList.remove("hide");
+      slotOne.classList.add("showFlex");
+      blueKeyDeskFirst.classList.remove("hide");
+      blueKeyDeskFirst.classList.remove("blueKeyDeskFirst");
+      slotFour.classList.add("showFlex");
+      lockPickDeskFirst.classList.remove("hide");
+      lockPickDeskFirst.classList.remove("lockPickDeskFirst");
+      exploreBookshelf.classList.remove("hide");
+      brownRoomBackBookshelfAfterDesk.classList.remove("hide");
+      break;
+    case 16:
+      otherRoomBg.classList.remove("hide");
+      slotOne.classList.add("showFlex");
+      blueKeyDeskFirst.classList.remove("hide");
+      blueKeyDeskFirst.classList.remove("blueKeyDeskFirst");
+      slotFour.classList.add("showFlex");
+      lockPickDeskFirst.classList.remove("hide");
+      lockPickDeskFirst.classList.remove("lockPickDeskFirst");
+      usedBookshelf.classList.remove("hide");
+      usedDesk.classList.remove("hide");
+      piano.classList.remove("hide");
+      exploreBookshelf.classList.add("hide");
+      brownRoomBackBookshelfAfterDesk.classList.add("hide");
+      brownRoomBackDeskBookshelf.classList.remove("hide");
   }
 }
 
@@ -437,6 +533,46 @@ useBlueKey.addEventListener("click", function () {
 
 desk.addEventListener("click", function () {
   currentId = 11;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+blueKeyDeskFirst.addEventListener("click", function () {
+  currentId = 12;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+brownRoomBackDeskFirst.addEventListener("click", function () {
+  currentId = 13;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+bookshelfDeskFirst.addEventListener("click", function () {
+  currentId = 14;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+lockPickDeskFirst.addEventListener("click", function () {
+  currentId = 15;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+brownRoomBackBookshelfAfterDesk.addEventListener("click", function () {
+  currentId = 16;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+brownRoomBackDeskBookshelf.addEventListener("click", function () {
+  currentId = 9;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
