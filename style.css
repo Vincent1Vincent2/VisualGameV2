@@ -13,6 +13,14 @@
   display: flex;
 }
 
+#startOverBtn {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  color: black;
+  background-color: #999999;
+}
+
 #startRoomBg {
   background-image: url(/imgs/backgrounds/startRoom.png);
   background-position: center;
@@ -139,6 +147,15 @@
   z-index: 1;
   transform: rotate(40deg);
 }
+
+.redKeyBedNoLockPick {
+  position: absolute;
+  left: -800%;
+  top: 600%;
+  z-index: 1;
+  transform: rotate(40deg);
+}
+
 #greenKey {
   cursor: pointer;
 }
@@ -149,7 +166,15 @@
 
 .greenKeyFloor {
   position: absolute;
-  top: 320%;
+  top: 350%;
+  left: -1400%;
+  cursor: pointer;
+  transform: rotate(-120deg);
+}
+
+.greenKeyFloorNoLockPick {
+  position: absolute;
+  top: 650%;
   left: -1400%;
   cursor: pointer;
   transform: rotate(-120deg);
@@ -164,7 +189,15 @@
 
 .noteSheetFloor {
   position: absolute;
-  top: 285%;
+  top: 190%;
+  left: -150%;
+  transform: rotate3d(1, 1, 1, 25deg);
+  cursor: pointer;
+}
+
+.noteSheetFloorNoLockPick {
+  position: absolute;
+  top: 290%;
   left: -150%;
   transform: rotate3d(1, 1, 1, 25deg);
   cursor: pointer;

@@ -1,5 +1,6 @@
 const gameBox = document.getElementById(".gameBox");
 const displayText = document.getElementById("displayText");
+const startOverBtn = document.getElementById("startOverBtn");
 const startRoomBg = document.getElementById("startRoomBg");
 const otherRoomBg = document.getElementById("otherRoomBg"); //SCENE
 const brownRoomBack = document.getElementById("brownRoomBack"); //CLICK (BACK ARROW)
@@ -84,7 +85,9 @@ const bedSideTable = document.getElementById("bedSideTable");
 const lockPickGameContainer = document.getElementById("lockPickGameContainer");
 const gameInfo = document.getElementById("gameInfo");
 const startBtn = document.getElementById("startBtn");
-const backBtn = document.getElementById("backBtn");
+const backBtnBlue = document.getElementById("backBtnBlue");
+const backBtnRed = document.getElementById("backBtnRed");
+const backBtnGreen = document.getElementById("backBtnGreen");
 const enterRoom = document.getElementById("enterRoom");
 const failText = document.getElementById("failText");
 const successText = document.getElementById("successText");
@@ -286,6 +289,90 @@ const optionTexts = [
   {
     id: 22,
     text: "",
+  },
+  {
+    id: 23,
+    text: "",
+  },
+  {
+    id: 24,
+    text: "Nice it worked, let's see what in there",
+  },
+  {
+    id: 25,
+    text: "Ok let's see.. A green key on the floor!",
+  },
+  {
+    id: 26,
+    text: "And there in the corner, a note sheet!",
+  },
+  {
+    id: 27,
+    text: "Maybe i can play the piano now",
+  },
+  {
+    id: 28,
+    text: "What to do now?",
+  },
+  {
+    id: 29,
+    text: "Is this the end?",
+  },
+  {
+    id: 30,
+    text: "You made it!",
+  },
+  {
+    id: 31,
+    text: "Too back, i could still use the blue key",
+  },
+  {
+    id: 32,
+    text: "Good thing i still had the key, the door is open now",
+  },
+  {
+    id: 33,
+    text: "On the bed.. a red key",
+  },
+  {
+    id: 34,
+    text: "Nice, oh and whats that on the bed side table?",
+  },
+  {
+    id: 35,
+    text: "",
+  },
+  {
+    id: 36,
+    text: "That was cool, let's go back",
+  },
+  {
+    id: 37,
+    text: "I wonder whats behind the red door...",
+  },
+  {
+    id: 38,
+    text: "Let's find out!",
+  },
+  {
+    id: 39,
+    text: "Look on the floor, a green key!",
+  },
+  {
+    id: 40,
+    text: "And there in the corner, a note sheet",
+  },
+  {
+    id: 41,
+    text: "I could probably use the piano now",
+  },
+  {
+    id: 42,
+    text: "Piano or green door...",
+  },
+  {
+    id: 43,
+    text: "Let's see whats behind here",
   },
 ];
 
@@ -536,6 +623,8 @@ function applyStyling(id) {
       ipodContainer.classList.remove("ipodContainerTable");
       ipodBackArrow.classList.remove("hide");
       ipodInstruction.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      slotFour.style.opacity = "0";
       break;
     case 20:
       ipodSvg.classList.add("hide");
@@ -554,6 +643,7 @@ function applyStyling(id) {
       redKey.classList.remove("hide");
       redKey.classList.remove("redKeyBed");
       redKey.style.pointerEvents = "none";
+      slotFour.style.opacity = "1";
       break;
     case 21:
       otherRoomBg.classList.add("hide");
@@ -569,9 +659,9 @@ function applyStyling(id) {
       useLockPick.style.pointerEvents = "auto";
       slotFour.classList.add("showFlex");
       slotTwo.classList.add("showFlex");
-      redKey.classList.remove("hide");
+      redKey.classList.add("hide");
       redKey.classList.remove("redKeyBed");
-      redKey.style.pointerEvents = "auto";
+      useRedKey.classList.remove("hide");
       blueDoorBg.classList.add("hide");
       break;
     case 22:
@@ -592,6 +682,355 @@ function applyStyling(id) {
       slotOne.classList.remove("showFlex");
       slotFour.classList.add("hide");
       slotFour.classList.remove("showFlex");
+      break;
+    case 23:
+      useLockPickBlue.classList.add("hide");
+      useLockPickRed.classList.add("hide");
+      useLockPickGreen.classList.add("hide");
+      lockPickGameContainer.classList.add("showFlex");
+      gameInfo.classList.remove("hide");
+      startBtn.classList.remove("hide");
+      document.body.classList.add("redRoom");
+      lockBodyBg.classList.add("redRoom");
+      blueDoor.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      redDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      startRoomBg.classList.add("hide");
+      slotTwo.classList.add("hide");
+      slotTwo.classList.remove("showFlex");
+      slotFour.classList.add("hide");
+      slotFour.classList.remove("showFlex");
+      break;
+    case 24:
+      slotFour.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
+      redDoorBg.classList.remove("hide");
+      startRoomBg.classList.remove("hide");
+      usedBlueDoor.classList.remove("hide");
+      redDoor.classList.add("hide");
+      openRedDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      slotTwo.classList.add("hide");
+      slotTwo.classList.remove("showFlex");
+      break;
+    case 25:
+      otherRoomBg.classList.remove("hide");
+      redDoorBg.classList.add("hide");
+      startRoomBg.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      openRedDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      slotFour.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.remove("hide");
+      break;
+    case 26:
+      otherRoomBg.classList.remove("hide");
+      redDoorBg.classList.add("hide");
+      startRoomBg.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      openRedDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      slotFour.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.remove("hide");
+      greenKey.classList.remove("greenKeyFloor");
+      greenKey.style.pointerEvents = "none";
+      slotFive.classList.add("showFlex");
+      noteSheet.classList.remove("hide");
+      break;
+    case 27:
+      otherRoomBg.classList.remove("hide");
+      redDoorBg.classList.add("hide");
+      startRoomBg.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      openRedDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      slotFour.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.remove("hide");
+      greenKey.classList.remove("greenKeyFloor");
+      greenKey.style.pointerEvents = "none";
+      slotFive.classList.add("showFlex");
+      noteSheet.classList.remove("hide");
+      noteSheet.classList.remove("noteSheetFloor");
+      noteSheet.style.pointerEvents = "none";
+      redRoomBack.classList.remove("hide");
+      break;
+    case 28:
+      otherRoomBg.classList.add("hide");
+      usedRedDoor.classList.remove("hide");
+      startRoomBg.classList.remove("hide");
+      usedBlueDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      slotFour.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "auto";
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.add("hide");
+      useGreenKey.classList.remove("hide");
+      slotFive.classList.add("showFlex");
+      noteSheet.classList.remove("hide");
+      noteSheet.classList.remove("noteSheetFloor");
+      noteSheet.style.pointerEvents = "none";
+      redRoomBack.classList.add("hide");
+      break;
+    case 29:
+      otherRoomBg.classList.add("hide");
+      usedRedDoor.classList.remove("hide");
+      startRoomBg.classList.remove("hide");
+      usedBlueDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.add("hide");
+      openGreenDoor.classList.remove("hide");
+      greenDoorBg.classList.remove("hide");
+      slotFour.classList.remove("hide");
+      slotFour.classList.add("showFlex");
+      useLockPick.classList.remove("hide");
+      useLockPick.style.pointerEvents = "none";
+      slotThree.classList.add("hide");
+      slotThree.classList.remove("showFlex");
+      useGreenKey.classList.add("hide");
+      slotFive.classList.add("showFlex");
+      useNoteSheet.classList.remove("hide");
+      useNoteSheet.style.pointerEvents = "none";
+      break;
+    case 30:
+      startRoomBg.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      usedRedDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      openGreenDoor.classList.add("hide");
+      greenDoorBg.classList.add("hide");
+      slotFour.classList.add("hide");
+      slotFour.classList.remove("showFlex");
+      slotFive.classList.add("hide");
+      slotFive.classList.remove("showFlex");
+      startOverBtn.classList.remove("hide");
+      break;
+    case 31:
+      brownRoomBackBookshelfDesk.classList.add("hide");
+      startRoomBg.classList.remove("hide");
+      otherRoomBg.classList.add("hide");
+      blueDoor.classList.remove("hide");
+      redDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      usedBookshelf.classList.add("hide");
+      usedDesk.classList.add("hide");
+      piano.classList.add("hide");
+      greenDoor.classList.remove("hide");
+      blueKey.classList.add("hide");
+      slotOne.classList.add("showFlex");
+      useBlueKey.classList.remove("hide");
+      slotFour.classList.remove("showFlex");
+      blueKeyDeskFirst.classList.add("hide");
+      brownRoomBackDeskBookshelf.classList.add("hide");
+      break;
+    case 32:
+      startRoomBg.classList.remove("hide");
+      otherRoomBg.classList.add("hide");
+      blueDoor.classList.add("hide");
+      openBlueDoor.classList.remove("hide");
+      blueDoorBg.classList.remove("hide");
+      redDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      slotOne.classList.add("hide");
+      slotOne.classList.remove("showFlex");
+      useBlueKey.classList.add("hide");
+      break;
+    case 33:
+      startRoomBg.classList.add("hide");
+      otherRoomBg.classList.remove("hide");
+      openBlueDoor.classList.add("hide");
+      blueDoorBg.classList.add("hide");
+      redDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      bed.classList.remove("hide");
+      bedSideTable.classList.remove("hide");
+      slotOne.classList.add("hide");
+      slotOne.classList.remove("showFlex");
+      slotTwo.classList.add("showFlex");
+      redKey.classList.remove("hide");
+      redKey.classList.remove("redKeyBed");
+      redKey.classList.add("redKeyBedNoLockPick");
+      break;
+    case 34:
+      otherRoomBg.classList.remove("hide");
+      bed.classList.remove("hide");
+      bedSideTable.classList.remove("hide");
+      ipodContainer.classList.remove("hide");
+      slotTwo.classList.add("showFlex");
+      redKey.classList.remove("hide");
+      redKey.classList.remove("redKeyBed");
+      redKey.classList.remove("redKeyBedNoLockPick");
+      redKey.style.pointerEvents = "none";
+      break;
+    case 35:
+      otherRoomBg.classList.add("hide");
+      bed.classList.add("hide");
+      bedSideTable.classList.add("hide");
+      useLockPick.classList.add("hide");
+      slotFour.classList.remove("showFlex");
+      slotTwo.classList.remove("showFlex");
+      redKey.classList.add("hide");
+      redKey.style.pointerEvents = "none";
+      ipodSvg.style.width = "600px";
+      ipodContainer.classList.add("showFlex");
+      ipodContainer.classList.add("ipodContainer");
+      ipodContainer.classList.remove("hide");
+      ipodContainer.classList.remove("ipodContainerTable");
+      ipodBackArrow.classList.remove("hide");
+      ipodInstruction.classList.remove("hide");
+      break;
+    case 36:
+      ipodSvg.classList.add("hide");
+      ipodContainer.classList.add("hide");
+      ipodInstruction.classList.add("hide");
+      ipodContainer.classList.remove("ipodContainer");
+      ipodBackArrow.classList.add("hide");
+      otherRoomBg.classList.remove("hide");
+      bed.classList.remove("hide");
+      bedSideTable.classList.remove("hide");
+      blueRoomBack.classList.remove("hide");
+      slotTwo.classList.add("showFlex");
+      redKey.classList.remove("hide");
+      redKey.classList.remove("redKeyBed");
+      redKey.style.pointerEvents = "none";
+      break;
+    case 37:
+      blueRoomBack.classList.add("hide");
+      otherRoomBg.classList.add("hide");
+      startRoomBg.classList.remove("hide");
+      bed.classList.add("hide");
+      bedSideTable.classList.add("hide");
+      redKey.classList.add("hide");
+      useRedKey.classList.remove("hide");
+      slotTwo.classList.add("showFlex");
+      usedBlueDoor.classList.remove("hide");
+      redDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      break;
+    case 38:
+      redDoorBg.classList.remove("hide");
+      startRoomBg.classList.remove("hide");
+      usedBlueDoor.classList.remove("hide");
+      redDoor.classList.add("hide");
+      openRedDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      slotTwo.classList.add("hide");
+      slotTwo.classList.remove("showFlex");
+      break;
+    case 39:
+      otherRoomBg.classList.remove("hide");
+      redDoorBg.classList.add("hide");
+      startRoomBg.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      openRedDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.remove("hide");
+      greenKey.classList.remove("greenKeyFloor");
+      greenKey.classList.add("greenKeyFloorNoLockPick");
+      break;
+    case 40:
+      otherRoomBg.classList.remove("hide");
+      redDoorBg.classList.add("hide");
+      startRoomBg.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      openRedDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.remove("hide");
+      greenKey.classList.remove("greenKeyFloor");
+      greenKey.style.pointerEvents = "none";
+      slotFive.classList.add("showFlex");
+      noteSheet.classList.remove("hide");
+      noteSheet.classList.remove("noteSheetFloor");
+      noteSheet.classList.add("noteSheetFloorNoLockPick");
+      break;
+    case 41:
+      redRoomBack.classList.remove("hide");
+      otherRoomBg.classList.remove("hide");
+      redDoorBg.classList.add("hide");
+      startRoomBg.classList.add("hide");
+      usedBlueDoor.classList.add("hide");
+      openRedDoor.classList.add("hide");
+      brownDoorOnlyPiano.classList.add("hide");
+      greenDoor.classList.add("hide");
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.remove("hide");
+      greenKey.classList.remove("greenKeyFloor");
+      greenKey.style.pointerEvents = "none";
+      slotFive.classList.add("showFlex");
+      noteSheet.classList.remove("hide");
+      noteSheet.classList.remove("noteSheetFloor");
+      noteSheet.classList.remove("noteSheetFloorNoLockPick");
+      break;
+    case 42:
+      otherRoomBg.classList.add("hide");
+      usedRedDoor.classList.remove("hide");
+      startRoomBg.classList.remove("hide");
+      usedBlueDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.remove("hide");
+      slotThree.classList.remove("hide");
+      slotThree.classList.add("showFlex");
+      greenKey.classList.add("hide");
+      useGreenKey.classList.remove("hide");
+      slotFive.classList.add("showFlex");
+      noteSheet.classList.remove("hide");
+      noteSheet.classList.remove("noteSheetFloor");
+      noteSheet.style.pointerEvents = "none";
+      redRoomBack.classList.add("hide");
+      break;
+    case 43:
+      otherRoomBg.classList.add("hide");
+      usedRedDoor.classList.remove("hide");
+      startRoomBg.classList.remove("hide");
+      usedBlueDoor.classList.remove("hide");
+      brownDoorOnlyPiano.classList.remove("hide");
+      greenDoor.classList.add("hide");
+      openGreenDoor.classList.remove("hide");
+      greenDoorBg.classList.remove("hide");
+      slotThree.classList.add("hide");
+      slotThree.classList.remove("showFlex");
+      useGreenKey.classList.add("hide");
+      slotFive.classList.add("showFlex");
+      noteSheet.classList.add("hide");
+      useNoteSheet.classList.remove("hide");
+      useNoteSheet.style.pointerEvents = "none";
       break;
   }
 }
@@ -653,7 +1092,12 @@ brownRoomBackBookshelfDesk.addEventListener("click", function () {
 });
 
 useBlueKey.addEventListener("click", function () {
-  currentId = 10;
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 10;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 32;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
@@ -707,35 +1151,60 @@ brownRoomBackDeskBookshelf.addEventListener("click", function () {
 });
 
 openBlueDoor.addEventListener("click", function () {
-  currentId = 17;
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 17;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 33;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
 });
 
 redKey.addEventListener("click", function () {
-  currentId = 18;
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 18;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 34;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
 });
 
 ipodContainer.addEventListener("click", function () {
-  currentId = 19;
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 19;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 35;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
 });
 
 ipodBackArrow.addEventListener("click", function () {
-  currentId = 20;
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 20;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 36;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
 });
 
 blueRoomBack.addEventListener("click", function () {
-  currentId = 21;
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 21;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 37;
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
@@ -754,6 +1223,124 @@ useLockPickBlue.addEventListener("click", function () {
   localStorage.setItem("currentId", currentId);
   updateText(currentId);
   applyStyling(currentId);
+});
+
+useLockPickRed.addEventListener("click", function () {
+  currentId = 23;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+useRedKey.addEventListener("click", function () {
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 24;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 38;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+openRedDoor.addEventListener("click", function () {
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 25;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 39;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+greenKey.addEventListener("click", function () {
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 26;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 40;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+noteSheet.addEventListener("click", function () {
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 27;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 41;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+redRoomBack.addEventListener("click", function () {
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 28;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 42;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+useGreenKey.addEventListener("click", function () {
+  if (slotFour.classList.contains("showFlex")) {
+    currentId = 29;
+    localStorage.setItem("currentId", currentId);
+    updateText(currentId);
+    applyStyling(currentId);
+  } else currentId = 43;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+openGreenDoor.addEventListener("click", function () {
+  currentId = 30;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+});
+
+startOverBtn.addEventListener("click", function () {
+  currentId = 1;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+  startOverBtn.classList.add("hide");
+});
+
+backBtnBlue.addEventListener("click", function () {
+  currentId = 31;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+  startOverBtn.classList.add("hide");
+});
+
+backBtnRed.addEventListener("click", function () {
+  currentId = 1;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+  startOverBtn.classList.add("hide");
+});
+
+backBtnGreen.addEventListener("click", function () {
+  currentId = 1;
+  localStorage.setItem("currentId", currentId);
+  updateText(currentId);
+  applyStyling(currentId);
+  startOverBtn.classList.add("hide");
 });
 
 function checkBlueUsedDoor() {
@@ -863,6 +1450,24 @@ function mouseAngle(cx, cy, ex, ey) {
   return ((Math.atan2(ey - cy, ex - cx) * 180) / Math.PI + 360) % 360;
 }
 
+function checkBackBtnBlue() {
+  if (document.body.classList.contains("blueRoom")) {
+    backBtnBlue.classList.remove("hide");
+  }
+}
+
+function checkBackBtnRed() {
+  if (document.body.classList.contains("redRoom")) {
+    backBtnRed.classList.remove("hide");
+  }
+}
+
+function checkBackBtnGreen() {
+  if (document.body.classList.contains("greenRoom")) {
+    backBtnGreen.classList.remove("hide");
+  }
+}
+
 function wonGame() {
   lockPickGameContainer.style.display = "flex";
   gameDescription.style.display = "none";
@@ -880,7 +1485,9 @@ function gameTimerCountDown() {
     gameDescription.style.display = "none";
     failText.style.display = "block";
     startBtn.style.display = "none";
-    backBtn.style.display = "block";
+    checkBackBtnBlue();
+    checkBackBtnRed();
+    checkBackBtnGreen();
     lockBodyBg.style.display = "none";
     lockContainer.style.display = "none";
     countDownNumber.style.display = "none";
