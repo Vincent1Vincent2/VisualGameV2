@@ -1610,6 +1610,7 @@ startOverBtn.addEventListener("click", function () {
   updateText(currentId);
   applyStyling(currentId);
   startOverBtn.classList.add("hide");
+  localStorage.clear();
 });
 
 backBtnBlue.addEventListener("click", function () {
